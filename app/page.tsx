@@ -1,18 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from "react";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/Button";  // Named import
-import { Input } from "@/components/ui/Input";    // Named import
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";  // Named imports
+import {
+  BarChart,
+  Bell,
+  BookOpen,
+  Calendar,
+  ChevronLeft,
+  GraduationCap,
+  Menu,
+  Users,
+} from "lucide-react";
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { BarChart, Bell, BookOpen, Calendar, ChevronLeft, GraduationCap, Menu, Users } from "lucide-react"
-
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function Component() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -37,19 +45,31 @@ export default function Component() {
           </Button>
         </div>
         <nav className="mt-5">
-          <Link href="#" className="flex items-center px-6 py-2 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200">
+          <Link
+            href="#"
+            className="flex items-center px-6 py-2 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200"
+          >
             <BarChart className="w-5 h-5 mr-3" />
             Dashboard
           </Link>
-          <Link href="#" className="flex items-center px-6 py-2 mt-5 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200">
+          <Link
+            href="#"
+            className="flex items-center px-6 py-2 mt-5 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200"
+          >
             <Users className="w-5 h-5 mr-3" />
             Students
           </Link>
-          <Link href="#" className="flex items-center px-6 py-2 mt-5 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200">
+          <Link
+            href="#"
+            className="flex items-center px-6 py-2 mt-5 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200"
+          >
             <BookOpen className="w-5 h-5 mr-3" />
             Courses
           </Link>
-          <Link href="#" className="flex items-center px-6 py-2 mt-5 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200">
+          <Link
+            href="#"
+            className="flex items-center px-6 py-2 mt-5 text-gray-300 hover:bg-gray-800 hover:text-orange-500 transition-colors duration-200"
+          >
             <Calendar className="w-5 h-5 mr-3" />
             Schedule
           </Link>
@@ -61,14 +81,25 @@ export default function Component() {
         {/* Top bar */}
         <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
           <div className="flex items-center">
-            <Button variant="ghost" size="icon" className="lg:hidden text-black" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden text-black"
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            >
               <Menu className="w-6 h-6" />
             </Button>
-            <h1 className="ml-3 text-2xl font-semibold text-black">Dashboard</h1>
+            <h1 className="ml-3 text-2xl font-semibold text-black">
+              Dashboard
+            </h1>
           </div>
           <div className="flex items-center">
             <Input type="search" placeholder="Search..." className="mr-4" />
-            <Button variant="ghost" size="icon" className="text-black hover:text-orange-500">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-black hover:text-orange-500"
+            >
               <Bell className="w-5 h-5" />
             </Button>
           </div>
@@ -81,7 +112,9 @@ export default function Component() {
             <div className="grid gap-6 mt-5 md:grid-cols-2 lg:grid-cols-4">
               <Card className="transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 focus-within:ring-2 focus-within:ring-orange-500 bg-white border-l-4 border-orange-500">
                 <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                  <CardTitle className="text-sm font-medium text-black">Total Students</CardTitle>
+                  <CardTitle className="text-sm font-medium text-black">
+                    Total Students
+                  </CardTitle>
                   <Users className="w-4 h-4 text-orange-500" />
                 </CardHeader>
                 <CardContent>
@@ -91,27 +124,37 @@ export default function Component() {
               </Card>
               <Card className="transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 focus-within:ring-2 focus-within:ring-orange-500 bg-white border-l-4 border-orange-500">
                 <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                  <CardTitle className="text-sm font-medium text-black">Active Courses</CardTitle>
+                  <CardTitle className="text-sm font-medium text-black">
+                    Active Courses
+                  </CardTitle>
                   <BookOpen className="w-4 h-4 text-orange-500" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold text-black">243</div>
-                  <p className="text-xs text-gray-600">+5 new courses this semester</p>
+                  <p className="text-xs text-gray-600">
+                    +5 new courses this semester
+                  </p>
                 </CardContent>
               </Card>
               <Card className="transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 focus-within:ring-2 focus-within:ring-orange-500 bg-white border-l-4 border-orange-500">
                 <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                  <CardTitle className="text-sm font-medium text-black">Average GPA</CardTitle>
+                  <CardTitle className="text-sm font-medium text-black">
+                    Average GPA
+                  </CardTitle>
                   <BarChart className="w-4 h-4 text-orange-500" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold text-black">3.42</div>
-                  <p className="text-xs text-gray-600">+0.1 from last semester</p>
+                  <p className="text-xs text-gray-600">
+                    +0.1 from last semester
+                  </p>
                 </CardContent>
               </Card>
               <Card className="transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 focus-within:ring-2 focus-within:ring-orange-500 bg-white border-l-4 border-orange-500">
                 <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                  <CardTitle className="text-sm font-medium text-black">Graduation Rate</CardTitle>
+                  <CardTitle className="text-sm font-medium text-black">
+                    Graduation Rate
+                  </CardTitle>
                   <GraduationCap className="w-4 h-4 text-orange-500" />
                 </CardHeader>
                 <CardContent>
@@ -126,5 +169,5 @@ export default function Component() {
         </main>
       </div>
     </div>
-  )
+  );
 }
